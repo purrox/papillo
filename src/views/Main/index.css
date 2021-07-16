@@ -1,0 +1,20 @@
+.home-container{
+    width: 90vw;
+    height: 99vh;
+    margin: 20px auto;
+    display: block;
+    background: rgb(34,193,195);
+    background: linear-gradient(180deg, rgba(34,193,195,1) 0%, rgba(4,4,4,1) 100%);
+}
+
+.main {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1 0 auto; /* 2 */
+    padding: var(--space) var(--space) 0;
+    width: 100%;
+}
