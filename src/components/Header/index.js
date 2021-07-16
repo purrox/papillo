@@ -8,7 +8,6 @@ const Header = () => {
             <div className={'logo'}>
                 <img src="./logo.png"/>
             </div>
-            <h2 className={'title-text'}>Inversiones Agricolas LOSE</h2>
         </div>
     );
 }
