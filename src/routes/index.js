@@ -1,5 +1,7 @@
 import React from "react";
 import Main from "../views/home";
+import Dashboard from "../views/dashboard";
+
 import {
     BrowserRouter as Router,
     Switch,
@@ -34,11 +36,4 @@ function About() {
     );
 }
 
-function Dashboard() {
-    return (
-        <div>
-            <h2>Dashboard</h2>
-        </div>
-    );
-}
 export default Routes;

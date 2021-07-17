@@ -5,10 +5,14 @@ import Input from "@material-ui/core/Input";
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 
 import './index.css';
+import { useHistory } from "react-router-dom";
 
 const Login = props => {
     const { control, handleSubmit } = useForm();
-    const onSubmit = data => console.log(data);
+    let history = useHistory();
+    const onSubmit = data => {
+        history.push("/dashboard");
+    }
 
     return (
         <div className={'login-container'}>
@@ -29,18 +33,6 @@ const Login = props => {
                     defaultValue=""
                     render={({ field }) => <Input type={'password'} {...field} />}
                 />
-                {/*<Controller*/}
-                {/*    name="iceCreamType"*/}
-                {/*    control={control}*/}
-                {/*    render={({ field }) => <Select*/}
-                {/*        {...field}*/}
-                {/*        options={[*/}
-                {/*            { value: "chocolate", label: "Chocolate" },*/}
-                {/*            { value: "strawberry", label: "Strawberry" },*/}
-                {/*            { value: "vanilla", label: "Vanilla" }*/}
-                {/*        ]}*/}
-                {/*    />}*/}
-                {/*/>*/}
                 <input type="submit" value={'Entrar'} />
             </form>
         </div>
