@@ -8,3 +8,7 @@ body{
     font-family: 'sheepsansbold' !important;
 
 }
+
+.MuiInputLabel-formControl{
+    position: inherit !important;
+}

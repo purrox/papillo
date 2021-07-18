@@ -14,11 +14,18 @@ import Badge from '@material-ui/core/Badge';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import Link from '@material-ui/core/Link';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import { mainListItems, secondaryListItems } from './listItem';
+import Drivers from "../drivers";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    useParams,
+    useRouteMatch
+} from "react-router-dom";
 import PropTypes from 'prop-types';
 
 const drawerWidth = 240;
@@ -106,6 +113,7 @@ const useStyles = makeStyles((theme) => ({
 const Dashboard = props => {
     const classes = useStyles();
     const [open, setOpen] = React.useState(true);
+    let { path, url } = useRouteMatch();
     const handleDrawerOpen = () => {
         setOpen(true);
     };
@@ -158,29 +166,15 @@ const Dashboard = props => {
             <main className={classes.content}>
                 <div className={classes.appBarSpacer} />
                 <Container maxWidth="lg" className={classes.container}>
-                    <Grid container spacing={3}>
-                        {/* Chart */}
-                        <Grid item xs={12} md={8} lg={9}>
-                            <Paper className={fixedHeightPaper}>
+                    <Switch>
+                        <Route exact path={path}>
+                            <h3>Please select a topic.</h3>
+                        </Route>
+                        <Route path={`${path}/drivers`}>
+                            <Drivers />
+                        </Route>
+                    </Switch>
 
-                            </Paper>
-                        </Grid>
-                        {/* Recent Deposits */}
-                        <Grid item xs={12} md={4} lg={3}>
-                            <Paper className={fixedHeightPaper}>
-
-                            </Paper>
-                        </Grid>
-                        {/* Recent Orders */}
-                        <Grid item xs={12}>
-                            <Paper className={classes.paper}>
-
-                            </Paper>
-                        </Grid>
-                    </Grid>
-                    <Box pt={4}>
-
-                    </Box>
                 </Container>
             </main>
         </div>
